@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
+html {
+  scroll-behavior: smooth;
+}
 *,
 *::before,
 *::after {
@@ -15,23 +17,41 @@ body {
   background-color: #d85454;
   color: white;
 }
-h2,
-h3{
+
+h3 {
   font-family: "Amatic SC", sans-serif;
 }
-h3{
-  padding-bottom:1.25rem ;
+h3 {
+  padding-bottom: 1.25rem;
 }
 h2 {
   font-size: 3.5rem;
 }
-h3{
+.footer h2 {
+  font-size: 2.5rem;
+  position: relative;
+}
+h1 {
+  position: relative;
+}
+
+h1::after,
+.footer h2::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #ce1212;
+  position: absolute;
+  bottom: 20%;
+  border-radius: 50%;
+}
+h3 {
   font-size: 3rem;
 }
-span{
+span {
   color: #7f7f90;
 }
-h3 span{
+h3 span {
   color: #ce1212;
 }
 a {
@@ -56,8 +76,9 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: -0.0625rem 0.125rem 1.4375rem 0.0625rem rgba(0,0,0,0.1);
+  box-shadow: -0.0625rem 0.125rem 1.4375rem 0.0625rem rgba(0, 0, 0, 0.1);
 }
+
 .navbar .container {
   display: flex;
   justify-content: space-between;
@@ -76,12 +97,13 @@ img {
   display: flex;
   column-gap: 1.25rem;
 }
-.navbar .nav-menu a:link,.navbar .nav-menu a:visited{
+.navbar .nav-menu a:link,
+.navbar .nav-menu a:visited {
   color: #7f7f90;
 }
-.navbar .nav-menu a:hover{
+.navbar .nav-menu a:hover,.navbar .nav-menu a:active{
   padding-bottom: 0.3125rem;
-  border-bottom:0.125rem solid #ce1212;
+  border-bottom: 0.125rem solid #ce1212;
 }
 
 .navbar .mode {
@@ -97,19 +119,24 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top:20vh;
+  padding-top: 20vh;
   height: 100vh;
 }
 .home .home-content {
   /* background-color: aqua; */
   flex-basis: 50%;
 }
-.home .home-content h2{
+.home .home-content h2 {
   padding-block: 1.25rem;
 }
 .home .home-hero {
   /* background-color: brown; */
+  filter: drop-shadow(0 0 10px grey);
   transition: all 1s;
+}
+.home .home-hero img {
+  height: 60vh;
+  filter: drop-shadow(2px 2px 5px grey);
 }
 .home .home-hero:hover img {
   animation: shake 0.1s ease-in-out 0.1s infinite alternate;
@@ -132,6 +159,11 @@ img {
   display: flex;
   /* justify-content: center; */
   align-items: center;
+  cursor: pointer;
+  transition: .5s;
+}
+.home .home-content .video-icon:hover {
+  color: #ce1212;
 }
 .home .home-content button {
   padding: 0.625rem 1.25rem;
@@ -186,7 +218,7 @@ img {
 /* .chefs .container {
   background-color: rgb(176, 176, 240);
 } */
-.chefs .card-content{
+.chefs .card-content {
   padding: 0 1.25rem 1.25rem 1.25rem;
 }
 .chefs .chefs-cards {
@@ -198,18 +230,45 @@ img {
 }
 .chefs .chefs-cards .card {
   flex-basis: 30%;
-  box-shadow: -0.0625rem 0.125rem 1.4375rem 0.0625rem rgba(0,0,0,0.1);
+  box-shadow: -0.0625rem 0.125rem 1.4375rem 0.0625rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
   /* background-color: bisque; */
 }
- /* .chefs .chefs-cards .card:hover {
-  scale: 1.01;
-}  */
+.chefs .chefs-cards .card:hover .social-links{
+  right: 2%;
+} 
 
-.chefs .card .img{
+.chefs .card .img {
   position: relative;
 }
+/* .chefs .chefs-cards .card img{
+  z-index: 0;
+} */
+.chefs .chefs-cards .card .social-links{
+  height: 11rem;
+  width: 2.8rem;
+  border-radius: 0.625rem;
+  position: absolute;
+  right: -20%;
+  top: 2%;
+  background-color: rgba(220, 220, 231, 0.447);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: .5s ease;
+  /* padding: 40px 20px; */
+}
+.chefs .chefs-cards .card .social-links i{
+  color: #7f7f90;
+  font-size: 15px;
+  transition: .5s;
+}
+.chefs .chefs-cards .card .social-links i:hover{
+  color: black;
+}
 
-.chefs .card .img .svg{
+.chefs .card .img .svg {
   position: absolute;
   bottom: 0;
 }
@@ -245,7 +304,7 @@ img {
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
   overflow: hidden;
-  transition: all 1.5s ;
+  transition: all 1.5s;
   z-index: 2;
 }
 .gallery .card .card-img {
@@ -253,7 +312,7 @@ img {
 }
 .gallery .card img {
   z-index: 1;
-  transition: all 1.5s ;
+  transition: all 1.5s;
 }
 .gallery .card .inner:hover .overlay {
   top: 0;
@@ -288,7 +347,7 @@ img {
   background-color: #eeeeee;
   padding: 1.25rem 0.625rem;
 }
-.contact .cards .card i{
+.contact .cards .card i {
   color: white;
 }
 .contact .cards .card .icon-container {
@@ -334,7 +393,7 @@ textarea {
   text-align: center;
   padding: 1.25rem;
   /* background-color: grey; */
-  box-shadow: -0.0625rem 0.125rem 1.4375rem 0.0625rem rgba(0,0,0,0.1);
+  box-shadow: -0.0625rem 0.125rem 1.4375rem 0.0625rem rgba(0, 0, 0, 0.1);
   margin-top: 3%;
 }
 .contact form button {
@@ -403,7 +462,8 @@ textarea {
   justify-content: space-around;
   padding-top: 0.625rem;
 }
-.footer .social-links i, .footer a{
+.footer .social-links i,
+.footer a {
   color: white;
 }
 .footer h4.social {
@@ -439,14 +499,13 @@ textarea {
 }
 /******Media Query******/
 @media screen and (max-width: 576px) {
-  html{
+  html {
     font-size: 10px;
   }
   .gallery .gallery-cards {
     columns: 1;
   }
-  .chefs .chefs-cards 
-  {
+  .chefs .chefs-cards {
     flex-direction: column;
     /* justify-content: space-between; */
     row-gap: 1.25rem;
@@ -464,16 +523,16 @@ textarea {
     flex-direction: column;
     gap: 0;
   }
-  .home .home-content h2{
+  .home .home-content h2 {
     padding-inline: 5rem;
-  } 
+  }
   .home .home-content {
     text-align: center;
-  } 
+  }
   .home .container {
     flex-direction: column-reverse;
     /* gap: 1.25rem; */
-  } 
+  }
   .home .home-hero img {
     height: 45vh;
   }
@@ -483,7 +542,7 @@ textarea {
 }
 
 @media screen and (min-width: 577px) and (max-width: 768px) {
-  html{
+  html {
     font-size: 12px;
   }
   .gallery .gallery-cards {
@@ -504,16 +563,16 @@ textarea {
     flex-direction: column;
     gap: 0;
   }
-  .home .home-content h2{
+  .home .home-content h2 {
     padding-inline: 5rem;
-  } 
+  }
   .home .home-content {
     text-align: center;
-  } 
+  }
   .home .container {
     flex-direction: column-reverse;
     /* gap: 1.25rem; */
-  } 
+  }
   .home .home-hero img {
     height: 45vh;
   }
@@ -523,7 +582,7 @@ textarea {
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
-  html{
+  html {
     font-size: 14px;
   }
   .gallery .gallery-cards {
@@ -533,20 +592,20 @@ textarea {
     flex-basis: 48%;
     margin-bottom: 4%;
   }
-  
+
   .footer .container {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1.875rem;
   }
-  .footer .container .column:nth-child(2){
+  .footer .container .column:nth-child(2) {
     order: 3;
     flex-grow: 4;
   }
-  .footer .container .column:nth-child(1){
+  .footer .container .column:nth-child(1) {
     flex-grow: 2;
   }
-  .footer .container .column:nth-child(3){
+  .footer .container .column:nth-child(3) {
     flex-grow: 2;
     line-height: 2;
   }
@@ -554,20 +613,21 @@ textarea {
     flex-direction: column;
     gap: 0;
   }
- 
-  .home .home-content h2{
+
+  .home .home-content h2 {
     padding-inline: 5rem;
-  } 
+  }
   .home .home-content {
     text-align: center;
-  } 
+  }
   .home .container {
     flex-direction: column-reverse;
     /* gap: 1.25rem; */
-  } 
+  }
   .home .home-hero img {
     height: 45vh;
   }
+
   .home .home-content .home-btn {
     justify-content: center;
   }
@@ -575,4 +635,3 @@ textarea {
 
 @media screen and (min-width: 993px) and (max-width: 1200px) {
 }
-
