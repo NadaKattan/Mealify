@@ -82,7 +82,6 @@ img {
 .navbar .container {
   display: flex;
   justify-content: space-between;
-  /* background-color: rgb(155, 155, 200); */
   align-items: center;
   height: 10vh;
 }
@@ -93,7 +92,6 @@ img {
 }
 .navbar .nav-menu {
   font-size: 1.2rem;
-  /* background-color: bisque; */
   display: flex;
   column-gap: 1.25rem;
 }
@@ -101,7 +99,8 @@ img {
 .navbar .nav-menu a:visited {
   color: #7f7f90;
 }
-.navbar .nav-menu a:hover,.navbar .nav-menu a:active{
+.navbar .nav-menu a:hover,
+.navbar .nav-menu a:active {
   padding-bottom: 0.3125rem;
   border-bottom: 0.125rem solid #ce1212;
 }
@@ -115,7 +114,6 @@ img {
   /* height: 90vh; */
 }
 .home .container {
-  /* background-color: bisque; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,14 +121,12 @@ img {
   height: 100vh;
 }
 .home .home-content {
-  /* background-color: aqua; */
   flex-basis: 50%;
 }
 .home .home-content h2 {
   padding-block: 1.25rem;
 }
 .home .home-hero {
-  /* background-color: brown; */
   filter: drop-shadow(0 0 10px grey);
   transition: all 1s;
 }
@@ -150,7 +146,6 @@ img {
   }
 }
 .home .home-content .home-btn {
-  /* background-color: aquamarine; */
   display: flex;
   column-gap: 0.9375rem;
   padding-top: 1.25rem;
@@ -160,7 +155,7 @@ img {
   /* justify-content: center; */
   align-items: center;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 .home .home-content .video-icon:hover {
   color: #ce1212;
@@ -212,17 +207,13 @@ img {
 
 /**********chefs***********/
 .chefs {
-  /* background-color: aqua; */
   text-align: center;
 }
-/* .chefs .container {
-  background-color: rgb(176, 176, 240);
-} */
+
 .chefs .card-content {
-  padding: 0 1.25rem 1.25rem 1.25rem;
+  padding: 0.625rem 1.25rem 2.25rem 1.25rem;
 }
 .chefs .chefs-cards {
-  /* background-color: aquamarine; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -233,19 +224,16 @@ img {
   box-shadow: -0.0625rem 0.125rem 1.4375rem 0.0625rem rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  /* background-color: bisque; */
+  transition: 0.5s ease;
 }
-.chefs .chefs-cards .card:hover .social-links{
+.chefs .chefs-cards .card:hover .social-links {
   right: 2%;
-} 
+}
 
 .chefs .card .img {
   position: relative;
 }
-/* .chefs .chefs-cards .card img{
-  z-index: 0;
-} */
-.chefs .chefs-cards .card .social-links{
+.chefs .chefs-cards .card .social-links {
   height: 11rem;
   width: 2.8rem;
   border-radius: 0.625rem;
@@ -256,32 +244,31 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  transition: .5s ease;
+  transition: 0.5s ease;
   /* padding: 40px 20px; */
 }
-.chefs .chefs-cards .card .social-links i{
+.chefs .chefs-cards .card .social-links i {
   color: #7f7f90;
   font-size: 15px;
-  transition: .5s;
+  transition: 0.5s ease-in-out;
 }
-.chefs .chefs-cards .card .social-links i:hover{
+.chefs .chefs-cards .card .social-links i:hover {
   color: black;
 }
-
+/* .chefs .chefs-cards .card:hover {
+  transform: scale(1.01);
+} */
 .chefs .card .img .svg {
   position: absolute;
-  bottom: 0;
+  bottom: -1%;
 }
 /**********gallery***********/
 .gallery {
   background-color: #eeeeee;
   text-align: center;
 }
-/* .gallery .container {
-  background-color: aquamarine;
-} */
+
 .gallery .card {
-  /* width: 30%; */
   padding: 0.25rem;
   background-color: white;
   margin-bottom: 0.9375rem;
@@ -289,7 +276,6 @@ img {
 }
 
 .gallery .card .inner {
-  /* background-color: white; */
   position: relative;
 }
 
@@ -331,9 +317,7 @@ img {
   /* background-color: aqua; */
   margin-bottom: 5%;
 }
-/* .contact .container {
-  background-color: aquamarine;
-} */
+
 .contact .contact-title {
   text-align: center;
 }
@@ -392,7 +376,6 @@ textarea {
 .contact form {
   text-align: center;
   padding: 1.25rem;
-  /* background-color: grey; */
   box-shadow: -0.0625rem 0.125rem 1.4375rem 0.0625rem rgba(0, 0, 0, 0.1);
   margin-top: 3%;
 }
@@ -418,7 +401,6 @@ textarea {
   color: white;
 }
 .footer .container {
-  /* background-color: rgb(118, 79, 29); */
   display: flex;
   justify-content: space-between;
   padding-block: 3rem;
@@ -435,7 +417,6 @@ textarea {
 }
 .footer .links li {
   transition: all 0.5s ease;
-  /* background-color: aqua; */
 }
 .footer .links li:hover {
   transform: translateX(0.4375rem);
@@ -473,7 +454,6 @@ textarea {
 .footer form {
   display: flex;
   gap: 0.3125rem;
-  /* background-color: aqua; */
 }
 .footer form button {
   padding: 0.3125rem;
@@ -509,6 +489,15 @@ textarea {
     flex-direction: column;
     /* justify-content: space-between; */
     row-gap: 1.25rem;
+  }
+  .chefs .card-content {
+    font-size: 12px;
+  }
+  .gallery .card .inner .overlay h5 {
+    font-size: 13px;
+  }
+  .gallery .card .inner .overlay {
+    font-size: 12px;
   }
   .contact .cards {
     flex-direction: column;
@@ -553,6 +542,13 @@ textarea {
     /* justify-content: space-between; */
     row-gap: 1.25rem;
   }
+  .chefs .card-content {
+    font-size: 14px;
+  }
+  .gallery .card .inner .overlay h5 {
+    font-size: 13px;
+  }
+
   .contact .cards {
     flex-direction: column;
   }
